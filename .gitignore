@@ -1,0 +1,11 @@
+*.mat
+*.exe
+*.dd
+*.png
+*.jpg
+*.bmp
+*.sublime-project
+*.sublime-worspace
+*.dll
+*.pdf
+*.doc
