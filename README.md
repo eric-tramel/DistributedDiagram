@@ -27,7 +27,7 @@ Usage
 First, DistributedDiagram and the user's experimental code must be on 
 the current Matlab path. Next, DistributedDiagram can either be started
 using the `interactive_dd.m` script, or can be called directly through
-`run_dd`. The number of tests to run, the output file name, and two anonymous
+`run_dd.m`. The number of tests to run, the output file name, and two anonymous
 functions must be specified: The point generation module and the experimental module.
 The user-written experimental module must take two inputs and return all results as
 a vector of numeric values.
