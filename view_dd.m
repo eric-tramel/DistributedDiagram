@@ -1,4 +1,4 @@
-function view_dd(filename,res)
+function view_dd(filename,res,specific_result)
     raw_data=dlmread(filename,',');
     x = raw_data(:,1);
     y = raw_data(:,2);
@@ -16,11 +16,17 @@ function view_dd(filename,res)
     Yq = linspace(ymin,ymax,res);
     [Xq,Yq] = meshgrid(Xq,Yq);
     
-    for i=1:rdim
-       Zq = griddata(x,y,results(:,i),Xq,Yq);
+    if nargin < 3
+        for i=1:rdim
+           Zq = griddata(x,y,results(:,i),Xq,Yq);
 
-        figure(i); clf;
-            surf(Xq,Yq,Zq,'EdgeColor','none');
+            figure(i); clf;
+                surf(Xq,Yq,Zq,'EdgeColor','none');
+        end
+    else
+        i = specific_result;
+        Zq = griddata(x,y,results(:,i),Xq,Yq);        
+        surf(Xq,Yq,Zq,'EdgeColor','none');
     end
     
     
