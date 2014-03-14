@@ -1,15 +1,18 @@
 clear;
 
-res         = 100;                            % Resolution of the itnerpolation 
-rtv         = 1;                              % Specify which result to view
-experiments = 200;
+res         = 50;                            % Resolution of the itnerpolation 
+rtv         = 2;                              % Specify which result to view
+experiments = 100;
 output_file = 'test.dd';
+
+% Set up the DT module
+pmodule = @(N_) pmodule_dt_point_UpperTri(N_,output_file);
+
 
 run_dd(experiments,...                        % The number of experiments to run
        output_file,...                        % Where to save the results to
-       @(N_) pmodule_uniform01(N_),...        % Specify the point-generation module
+       pmodule,...                            % Specify the point-generation module
        @dd_foo);                              % The meat-and-potatoes experiment function   
-
 
 
 raw_results = dlmread(output_file,',');
