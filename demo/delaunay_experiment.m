@@ -13,7 +13,7 @@ pmodule = @(x_) pmodule_best_point('test.dd',rtv);
 run_dd(experiments,...                        % The number of experiments to run
        output_file,...                        % Where to save the results to
        pmodule,...                            % Specify the point-generation module
-       @dd_foo);                              % The meat-and-potatoes experiment function   
+       @dd_foo2);                              % The meat-and-potatoes experiment function   
 
 
 raw_results = dlmread(output_file,',');
@@ -22,7 +22,7 @@ total_experiments = size(raw_results,1);
 figure(1); clf;
 subplot(1,3,1);
     [X,Y] = meshgrid(linspace(0,1,res),linspace(0,1,res));
-    Z = dd_foo(X,Y);
+    Z = dd_foo2(X,Y);
     surf(X,Y,Z(:,:,rtv),'EdgeColor','none');
     title('Original Function');
     view(2);
