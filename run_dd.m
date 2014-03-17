@@ -14,18 +14,19 @@ else
 end
 
 % Get all the points we need
-[x,y] = gen_point(N);
+% [x,y] = gen_point(N);
 
 
 % Run the experiment over these points
-for i=1:length(x)
-%     [x,y] = gen_point(1);
+% for i=1:length(x)
+for i=1:N
+    [x,y] = gen_point();
     % Sometimes, for intial points, we have to run multiples, here
     
-%     for k=1:length(x)
-        result = test_function(x(i),y(i));
+    for k=1:length(x)
+        result = test_function(x(k),y(k));
 
-        fprintf(output_fid,'%.5e,%.5e,',x(i),y(i));
+        fprintf(output_fid,'%.5e,%.5e,',x(k),y(k));
         for j=1:length(result)
             if j==length(result)
                 fprintf(output_fid,'%.5e',result(j));
@@ -35,5 +36,5 @@ for i=1:length(x)
 
         end
         fprintf(output_fid,'\n');
-%     end
+    end
 end

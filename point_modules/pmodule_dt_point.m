@@ -1,5 +1,4 @@
 function [x,y] = pmodule_dt_point(N,output_file)
-
 	if nargin > 1
 		% Load the output output_file to see what points
 		% we already have.
