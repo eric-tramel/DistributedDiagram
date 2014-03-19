@@ -17,7 +17,7 @@ function [x_trans, y_trans]= transition_search(test_module,threshold,y_,N_,trial
 
 	%% Default Values
 	trials = 5;	
-	N = 10;
+	N = 6;
 	nY = 10;
 	mindx = 1e-4;
 
